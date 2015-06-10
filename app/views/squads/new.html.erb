@@ -1,0 +1,36 @@
+<%= form_for @squad do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :formation %>
+  <%= f.text_field :formation %>
+  
+  <%= f.hidden_field :slot1_player_id %>
+  <%= f.hidden_field :slot2_player_id %>
+  <%= f.hidden_field :slot3_player_id %>
+  <%= f.hidden_field :slot4_player_id %>
+    
+  <%= f.submit %>
+  
+  
+<% end %>
+
+<div class="card1">
+  <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMLh83UoTe8qP8fx6jX5QLePiHeAwn5TrCB7dW26LfzoajH2lJuw", class: "card1-img", id: "1", width: '150', height: '200') %>
+</div>
+
+<div class="rectangle" id="slot1">
+  
+</div>
+
+<div class="rectangle" id="slot2">
+  
+</div>
+
+<div class="rectangle" id="slot3">
+  
+</div>
+
+<div class="rectangle" id="slot4">
+  
+</div>

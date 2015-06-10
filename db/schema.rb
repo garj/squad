@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608234431) do
+ActiveRecord::Schema.define(version: 20150610132433) do
 
   create_table "players", force: true do |t|
     t.string   "name"
@@ -26,6 +26,10 @@ ActiveRecord::Schema.define(version: 20150608234431) do
     t.string   "formation"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "slot1_player_id"
+    t.integer  "slot2_player_id"
+    t.integer  "slot3_player_id"
+    t.integer  "slot4_player_id"
   end
 
 end

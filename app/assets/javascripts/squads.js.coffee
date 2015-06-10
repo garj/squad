@@ -16,10 +16,16 @@ $(document).on 'page:change', ->
       return
     return
   
-  $('.card2').droppable drop: (ev, ui) ->
-    alert "dropped"
+  $('.rectangle').droppable drop: (ev, ui) ->
     $(ui.draggable).css 'top', $(this).position().top + 50
     $(ui.draggable).css 'left', $(this).position().left + 50
+    to_id = $(this).attr('id')
+    from_id = $(ui.draggable).attr('id')
+    $('#squad_' + to_id + '_player_id').attr('value', from_id)
+    $(this).css('width', 50)
+    
+    alert "dropped from" + from_id + "to" + to_id
+    
     return
   
   return

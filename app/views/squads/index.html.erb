@@ -1,8 +1,14 @@
-<div class="card1">
-  <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMLh83UoTe8qP8fx6jX5QLePiHeAwn5TrCB7dW26LfzoajH2lJuw", class: "card1-img", width: '20', height: '20') %>
-</div>
+All Squads
 
-<div class="card2">
-  <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMLh83UoTe8qP8fx6jX5QLePiHeAwn5TrCB7dW26LfzoajH2lJuw", width: '200', height: '200') %>
-</div>
+<% @squads.each do |squad| %>
+  <p>
+    Squad name:
+    <%= squad.name %>
+  </p>
+  <p>
+    Squad formation:
+    <%= squad.formation %>
+  </p>
+<% end %>
 
+<%= link_to "new suqad", new_squad_path %>
