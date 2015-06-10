@@ -3,7 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'page:change', ->
-  alert 'hello'
+  alert 'test'
+  
+  $('.card1-img').draggable()  
+  
   $('.card1').click ->
     $.ajax(
       method: 'GET'
@@ -12,4 +15,11 @@ $(document).on 'page:change', ->
       alert 'came back!' + data[0].name
       return
     return
+  
+  $('.card2').droppable drop: (ev, ui) ->
+    alert "dropped"
+    $(ui.draggable).css 'top', $(this).position().top + 50
+    $(ui.draggable).css 'left', $(this).position().left + 50
+    return
+  
   return
