@@ -17,15 +17,26 @@ $(document).on 'page:change', ->
     return
   
   $('.rectangle').droppable drop: (ev, ui) ->
-    $(ui.draggable).css 'top', $(this).position().top + 50
-    $(ui.draggable).css 'left', $(this).position().left + 50
+    # snap to new parent
+    $(ui.draggable).css 'top', $(this).position().top
+    $(ui.draggable).css 'left', $(this).position().left
+    
     to_id = $(this).attr('id')
     from_id = $(ui.draggable).attr('id')
+    
+    # set hidden field value to card id
     $('#squad_' + to_id + '_player_id').attr('value', from_id)
-    $(this).css('width', 50)
-    
+
     alert "dropped from" + from_id + "to" + to_id
+
+    # reset hidden field for old parent    
+    parent_id = $(ui.draggable).parent().attr('id')
+    $('#squad_' + parent_id + '_player_id').attr('value', 0)
     
+    # set new hidden field value for new parent
+    $('#squad_' + to_id + '_player_id').attr('value', from_id)
+    
+    # append card to new slot
+    $('.card1-img').appendTo('#'+ to_id)  
     return
-  
   return

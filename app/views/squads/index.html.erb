@@ -3,7 +3,7 @@ All Squads
 <% @squads.each do |squad| %>
   <p>
     Squad name:
-    <%= squad.name %>
+    <%= link_to squad.name, squad_path(squad) %>
   </p>
   <p>
     Squad formation:

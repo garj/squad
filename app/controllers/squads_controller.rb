@@ -8,7 +8,12 @@ class SquadsController < ApplicationController
   end
   
   def create
-    fail
+    @squad = Squad.new(params.require(:squad).permit(:name, :formation, :slot1_player_id, :slot2_player_id, :slot3_player_id, :slot4_player_id))
+    if @squad.save
+      redirect_to squads_path
+    else
+      render :new
+    end
   end
   
   def destroy
@@ -18,6 +23,10 @@ class SquadsController < ApplicationController
   end
   
   def edit
+  end
+  
+  def show
+    @squad = Squad.find(params[:id])
   end
 
 end
