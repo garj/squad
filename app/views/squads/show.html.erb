@@ -6,4 +6,4 @@
   Formation: <%= @squad.formation %>
 </div>
 
-<%= render 'formation' %>
+<%= render partial: 'formation', locals: {player1: @slot1_player, player2: @slot2_player, player3: @slot3_player, player4: @slot4_player} %>
